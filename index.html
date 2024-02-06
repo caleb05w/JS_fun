@@ -5,20 +5,73 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta charset = UTF-8>
         <link rel="stylesheet" href="style.css">
-        <script src="main.js"></script>
     </head>
 <body>
 
-<div class="border-box">
-    <div class="border-center">
-        <h1></h1>
+<div class="body-grid">
         <div class="container">
-            <h1 id="changer"> omg im here </h1>
-            <button onclick="disappear()"> PRESS ME </button>
+            <div class="border-center">
+                <h1 id="changer"> getElementByID cssText changer </h1>
+                <div class="tag-bttn" onclick="disappear()"> PRESS ME </div>
+            </div>
         </div>
-    </div>
+
+        <div id ="hovererBox" class="container">
+            <div class="border-center">
+                <h1 id="hoverer"> onmouseover </h1>
+                <div class="tag-bttn" onmouseover=" colorChange()"> HOVER OVER ME </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="border-center">
+                <h1 id="randstring"> Random number </h1>
+                <div class="tag-bttn" onClick="stringRand()"> PRESS ME </div>
+            </div>
+        </div>
+
+        <div class="container" id="area">
+            <div class="border-center">
+                <h1> Better Hover </h1>
+            </div>
+        </div>
+        
+
+        <div class="container" id="area2">
+            <div class="border-center">
+                <h1> Press your keyboard!</h1>
+                <div class="grid-template-column-4">
+                    <div class="tag" id="W">W</div>
+                    <div class="tag" id="A">A</div>
+                    <div class="tag" id="S">S</div>
+                    <div class="tag" id="D">D</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="border-center">
+                <h1> Rock Paper Scissor</h1>
+                <div class="grid-template-column-3">
+                    <div class="tag-bttn" id="rockBttn">rock</div>
+                    <div class="tag-bttn" id="paper_bttn">paper</div>
+                    <div class="tag-bttn" id="scissor_bttn">scissor</div>
+                </div>
+                <div class="container-flex">
+                    <h1 id="outcome">nothing</h1>
+                    <h1> vs </h1>;
+                    <h1 id="userOutcome">nothing</h1>
+                </div>
+
+                <h1 id="declare">outcome</h1>
+
+            </div>
+        </div>
+        
 </div>
 
 </body>
+<script src="main.js"></script>
 
 </html>
