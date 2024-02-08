@@ -39,13 +39,20 @@
 
         <div class="container" id="area2">
             <div class="border-center">
-                <h1> Press your keyboard!</h1>
+                <h1> Press your keyboard!</h1> <span>this doesnt work lol</span>
                 <div class="grid-template-column-4">
                     <div class="tag" id="W">W</div>
                     <div class="tag" id="A">A</div>
                     <div class="tag" id="S">S</div>
                     <div class="tag" id="D">D</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="border-center">
+                <h1> Rock Paper Scissor </h1>
+                <div class="tag-bttn" id="RPStrigger">Play</div>
             </div>
         </div>
 
@@ -80,19 +87,16 @@
 -->
 
 
-        <div class="shield"></div>
+        <div class="shield" id="shieldtoggle"></div>
         <!-- RPS -->
-        <div class="containerRPS">
-            <div class="divider"></div>
+        <div class="containerRPS" id="containerRPStoggle" style="border: 1px solid black;">
                 <div class="grid-template-column-2">
-
-
-                    <div class="container">
+                    <div class="container" style="border: 0px">
                         <div class="container-RPSoutcome">
                             <div class="container-tester">
                                 <div class="border-center">
                                     <span></span>
-                                    <div class="container"><img id="RPSIMG"src="images/RPSquestion.png"></div>
+                                    <div class="container" style="border: 0px"><img id="RPSIMG"src="images/RPSquestion.png"></div>
                                     <span id="userOutcome"></span>
                                 </div>
                             </div>
@@ -101,24 +105,26 @@
                     </div>
 
 
-                    <div class="container">
+                    <div class="container" style="border: 0px">
                         <div class="container-RPSoutcome">
                             <div class="border-center">
-                                <p></p>
-                                <div class="container"><img id="RPSIMG1"src="images/RPSquestion.png"></div>
+                                <span></span>
+                                <div class="container" style="border: 0px"><img id="RPSIMG1"src="images/RPSquestion.png"></div>
                                 <span id="outcome"></span>
                             </div>
                         </div>
                     <div class="container-rpstitle"><h1>Bot</h1><span id="winloss">0</span></div>
                     </div>
                 </div>
-                <div class="container-vs"><h1>VS</h1><span id="declare"> no outcome </span></div>
+                <div class="container-vs"><h1>VS</h1> <span id="declare"> no outcome </span></div>
 
                 <div class="containerRPSoptions" style="margin-left: 40%">
                     <div class="tagRPS" id="rockBttn">ROCK</div>
                     <div class="tagRPS" id="paper_bttn">PAPER</div>
                     <div class="tagRPS" id="scissor_bttn">SCISSOR</div>
                 </div>
+
+            <span class="closebttn" id="closebttn"><h1>x</h1></span>
         </div>
         
 </div>

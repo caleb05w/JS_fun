@@ -46,14 +46,45 @@ function betterColorChange(){
 
 /* JS Rock Paper scissors */
 
-/* event generator */
+/* display game */
+var botWinvLoss = 0;
+var userWinvLoss = 0;
+document.getElementById("RPStrigger").addEventListener("click", function() {RPSopen()});
+document.getElementById("closebttn").addEventListener("click", function() {RPSclose()});
 
+function RPSopen() {
+    document.getElementById("containerRPStoggle").style.cssText=`
+    scale: 100%;
+    transition: 0.5 ease-in-out;
+    `
+    document.getElementById("shieldtoggle").style.cssText=`
+    scale: 100%;
+    transition: 0.5 ease-in-out;
+    `
+}
 
+function RPSclose() {
+    botWinvLoss = 0;
+    userWinvLoss = 0;
+    document.getElementById("containerRPStoggle").style.cssText=`
+    scale: 0%;
+    transition: 0.5 ease-in-out;
+    `
+    document.getElementById("shieldtoggle").style.cssText=`
+    scale: 0%;
+    transition: 0.5 ease-in-out;
+    `
+    /* reset */
+    document.getElementById("userwinloss").innerHTML = userWinvLoss;
+    document.getElementById("winloss").innerHTML = botWinvLoss;
+    document.getElementById("declare").innerHTML = "no outcome";
+    document.getElementById("outcome").innerHTML = "";
+    document.getElementById("userOutcome").innerHTML = "";
+    document.getElementById("RPSIMG").src='images/RPSquestion.png';
+    document.getElementById("RPSIMG1").src='images/RPSquestion.png';
 
+}
 
-
-let botWinvLoss = 0;
-let userWinvLoss = 0;
 /* generates results when spun, rock, paper, scissor */
 function RPSoutcome(RPSuser, assignment) {
 
