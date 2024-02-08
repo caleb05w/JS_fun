@@ -52,53 +52,79 @@ function betterColorChange(){
 
 
 
-
+let botWinvLoss = 0;
+let userWinvLoss = 0;
 /* generates results when spun, rock, paper, scissor */
 function RPSoutcome(RPSuser, assignment) {
+
 /* array for storing variables to be randomized*/
 var RPSlib = [1, 2, 3];
 /* innit new var that returns a random number between RPSlib array length, in this case it is between 1 -3*/
 var RPSrandom = Math.floor((Math.random()*RPSlib.length));
 /* innit new var that returns the str returned by random var from RPSrandom */
 var RPSrandomoutcome = RPSlib[RPSrandom];
-/*prints str returned by RPSrandomoutcome, lets me moniter test */
-console.log(RPSrandomoutcome)
 /* should replace outcome str in html with outcome of random spin */
 
-if (RPSrandomoutcome == 1){ document.getElementById("outcome").innerHTML = "scissor"; }
-if (RPSrandomoutcome == 2){ document.getElementById("outcome").innerHTML = "rock"; }
-if (RPSrandomoutcome == 3){ document.getElementById("outcome").innerHTML = "paper"; }
 
+/* Translators from int to str */
+if (RPSrandomoutcome == 1){ 
+    document.getElementById("outcome").innerHTML = "rock";
+    document.getElementById("RPSIMG1").src='images/RPSrock.png';
+ }
+if (RPSrandomoutcome == 2){ 
+    document.getElementById("outcome").innerHTML = "paper"; 
+    document.getElementById("RPSIMG1").src='images/RPSpaper.png';
+}
+if (RPSrandomoutcome == 3){ 
+    document.getElementById("outcome").innerHTML = "scissor";
+    document.getElementById("RPSIMG1").src='images/RPSscissor.png';
+}
+
+if (assignment == 1 ){document.getElementById("RPSIMG").src='images/RPSrock.png';}
+if (assignment == 2 ){document.getElementById("RPSIMG").src='images/RPSpaper.png';}
+if (assignment == 3 ){document.getElementById("RPSIMG").src='images/RPSscissor.png';}
 document.getElementById("userOutcome").innerHTML = RPSuser;
 
 /*if(strcmp(outcome, userOutcome) == 0){*/
 
-if(outcome == userOutcome){
+if(RPSrandomoutcome == assignment){
     document.getElementById("declare").innerHTML = "tie";
 
 }
-    else {
-        document.getElementById("declare").innerHTML = "no tie";
-    }
 
-
-    /* okay so like
-
-    rock > scissor
-
-    scissor > rock
-
-    rock > paper
-
-    
-
-/* if (condition) {
-    function
-}
-*/
-
+if( RPSrandomoutcome == 2 && assignment == 1){
+    document.getElementById("declare").innerHTML = "User Loses";
+    botWinvLoss += 1;
 }
 
+if( RPSrandomoutcome == 2 && assignment == 3){
+    document.getElementById("declare").innerHTML = "User Wins";
+    userWinvLoss += 1;
+}
+
+if( RPSrandomoutcome == 1 && assignment == 2){
+    document.getElementById("declare").innerHTML = "User Wins";
+    userWinvLoss += 1;
+}
+
+if( RPSrandomoutcome == 1 && assignment == 3){
+    document.getElementById("declare").innerHTML = "User Loses";
+    botWinvLoss += 1;
+}
+
+if( RPSrandomoutcome == 3 && assignment == 1){
+    document.getElementById("declare").innerHTML = "User Wins";
+    userWinvLoss += 1;
+}
+
+
+if( RPSrandomoutcome == 3 && assignment == 2){
+    document.getElementById("declare").innerHTML = "User Loses";
+    botWinvLoss += 1;
+}
+document.getElementById("userwinloss").innerHTML = userWinvLoss;
+document.getElementById("winloss").innerHTML = botWinvLoss;
+}
 
 
 document.getElementById("rockBttn").addEventListener("click", function() {RPSoutcome("rock", 1)});
@@ -106,6 +132,26 @@ document.getElementById("paper_bttn").addEventListener("click", function() {RPSo
 document.getElementById("scissor_bttn").addEventListener("click", function() {RPSoutcome("scissor", 3)});
 
 
+/* event listener hover rps */
+
+document.getElementById("RPStag").addEventListener("mouseover", function() {tagRPS()});
+document.getElementById("RPStag").addEventListener("mouseout", function() {tagRPS2()});
+
+
+
+function tagRPS() {
+    document.getElementById("RPStag").style.cssText=`
+    background-color: black;
+    color: white;
+    `
+}
+
+function tagRPS2() {
+    document.getElementById("RPStag").style.cssText=`
+    background-color: none;
+    color: black;
+    `
+}
 
 /* Event listener keyboard review, this also doesn't work at all*/
 

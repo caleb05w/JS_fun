@@ -50,28 +50,81 @@
         </div>
 
 
-        <div class="container">
+<!--        <div class="container">
             <div class="border-center">
-                <h1> Rock Paper Scissor</h1>
+                <h1 id="declare"> Rock Paper Scissor</h1>
                 <div class="grid-template-column-3">
                     <div class="tag-bttn" id="rockBttn">rock</div>
                     <div class="tag-bttn" id="paper_bttn">paper</div>
                     <div class="tag-bttn" id="scissor_bttn">scissor</div>
+                    
                 </div>
-                <div class="container-flex">
-                    <h1 id="outcome">nothing</h1>
-                    <h1> vs </h1>;
-                    <h1 id="userOutcome">nothing</h1>
+                <div class="grid-template-column-3">
+                    <div class="container">
+                        <h1> Bot:</h1>
+                        <h1 id="outcome">nothing</h1>
+                    </div>
+
+                    <h1> vs </h1>
+                    
+                    <div class="container">
+                        <h1> User:</h1>
+                        <h1 id="userOutcome">nothing</h1>
+                    </div>
                 </div>
 
-                <h1 id="declare">outcome</h1>
+                <h1 id="W/L">outcome</h1>
 
             </div>
+        </div>
+-->
+
+
+        <div class="shield"></div>
+        <!-- RPS -->
+        <div class="containerRPS">
+            <div class="divider"></div>
+                <div class="grid-template-column-2">
+
+
+                    <div class="container">
+                        <div class="container-RPSoutcome">
+                            <div class="container-tester">
+                                <div class="border-center">
+                                    <span></span>
+                                    <div class="container"><img id="RPSIMG"src="images/RPSquestion.png"></div>
+                                    <span id="userOutcome"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-rpstitle"><h1>User</h1><span id="userwinloss">0</span></div>
+                    </div>
+
+
+                    <div class="container">
+                        <div class="container-RPSoutcome">
+                            <div class="border-center">
+                                <p></p>
+                                <div class="container"><img id="RPSIMG1"src="images/RPSquestion.png"></div>
+                                <span id="outcome"></span>
+                            </div>
+                        </div>
+                    <div class="container-rpstitle"><h1>Bot</h1><span id="winloss">0</span></div>
+                    </div>
+                </div>
+                <div class="container-vs"><h1>VS</h1><span id="declare"> no outcome </span></div>
+
+                <div class="containerRPSoptions" style="margin-left: 40%">
+                    <div class="tagRPS" id="rockBttn">ROCK</div>
+                    <div class="tagRPS" id="paper_bttn">PAPER</div>
+                    <div class="tagRPS" id="scissor_bttn">SCISSOR</div>
+                </div>
         </div>
         
 </div>
 
 </body>
 <script src="main.js"></script>
+<script src="https://kit.fontawesome.com/3d577348db.js" crossorigin="anonymous"></script>
 
 </html>
